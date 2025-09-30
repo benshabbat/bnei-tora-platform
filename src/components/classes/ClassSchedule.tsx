@@ -32,6 +32,8 @@ const mockClasses: Class[] = [
   }
 ]
 
+const daysOfWeek = ['ראשון', 'שני', 'שלישי', 'רביעי', 'חמישי', 'שישי', 'שבת']
+
 export default function ClassSchedule() {
   const [selectedDay, setSelectedDay] = useState<string>('הכל')
   const [registeredClasses, setRegisteredClasses] = useState<string[]>([])
@@ -54,6 +56,29 @@ export default function ClassSchedule() {
         <BookOpen className="text-blue-600" />
         לוח שיעורים - בית הכנסת בני תורה
       </h2>
+      
+      {/* Day Filter */}
+      <div className="mb-6">
+        <div className="flex flex-wrap justify-center gap-2">
+          <Button
+            variant={selectedDay === 'הכל' ? 'default' : 'outline'}
+            onClick={() => setSelectedDay('הכל')}
+            size="sm"
+          >
+            הכל
+          </Button>
+          {daysOfWeek.map(day => (
+            <Button
+              key={day}
+              variant={selectedDay === day ? 'default' : 'outline'}
+              onClick={() => setSelectedDay(day)}
+              size="sm"
+            >
+              {day}
+            </Button>
+          ))}
+        </div>
+      </div>
       
       <div className="grid gap-6 lg:grid-cols-2">
         {filteredClasses.map((cls) => {

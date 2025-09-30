@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -17,8 +17,12 @@ export const metadata: Metadata = {
   description: "פלטפורמה דיגיטלית לבית הכנסת בני תורה - שיעורים, אירועים, ומקומות ישיבה",
   keywords: ["בית כנסת", "בני תורה", "שיעורים", "אירועים", "תפילה", "יהדות"],
   authors: [{ name: "בית הכנסת בני תורה" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow"
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -28,17 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@300;400;500;600;700&display=swap" 
-          rel="stylesheet" 
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
-        style={{ fontFamily: '"Noto Sans Hebrew", "Geist", sans-serif' }}
+        style={{ fontFamily: '"Heebo", "Geist", sans-serif' }}
       >
         {children}
       </body>

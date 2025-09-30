@@ -85,11 +85,6 @@ const mockEvents: Event[] = [
   }
 ]
 
-const hebrewMonths = [
-  'תשרי', 'מרחשון', 'כסליו', 'טבת', 'שבט', 'אדר',
-  'ניסן', 'אייר', 'סיון', 'תמוז', 'אב', 'אלול'
-]
-
 export default function EventCalendar() {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'holiday' | 'special' | 'regular'>('all')
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
