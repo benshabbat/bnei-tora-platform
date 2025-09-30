@@ -46,7 +46,7 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Seating Map */}
           <div>
-            <SeatingMap rows={8} seatsPerRow={6} />
+            <SeatingMap />
           </div>
           
           {/* Classes */}
